@@ -3,7 +3,7 @@ services:
   php:
     build:
       context : ./
-    working_dir: /app/public
+    working_dir: /app
     ports:
       - "8080:8080"
     volumes:
