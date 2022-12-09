@@ -3,21 +3,21 @@ services:
   php:
     build:
       context : ./
-    working_dir: /app
+    command: php -S 0.0.0.0:8080
+    working_dir: /app/public
     ports:
       - "8080:8080"
     volumes:
       - .:/app
     depends_on:
       - mariadb
-
   mariadb:
     image: mariadb:latest
     restart: on-failure
     ports:
       - "3306:3306"
     volumes:
-      - ./.docker/mariadb:/var/lib/mysql
+        - ./.docker/mysql:/var/lib/mysql
     environment:
       - MARIADB_DATABASE=bumblebee
       - MARIADB_ROOT_USER=root
