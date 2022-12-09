@@ -13,7 +13,7 @@ $app = AppFactory::create();
 
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
+    $response->getBody()->write("<img src='https://media.tenor.com/tHLGe49Kf1EAAAAd/oh-blow-fish.gif' alt='aled'>");
     return $response;
 });
 
