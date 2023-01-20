@@ -18,6 +18,10 @@ $app->get('/', function (Request $request, Response $response) {
     $response->getBody()->write(ResponseManager::successResponse("API is running"));
     return $response;
 });
+$app->get('/test', function (Request $request, Response $response) {
+    $response->getBody()->write(ResponseManager::successResponse("API is running, test is ok"));
+    return $response;
+});
 
 
 
