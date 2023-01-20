@@ -17,11 +17,25 @@ services:
     ports:
       - "3306:3306"
     volumes:
-        - ./.docker/mysql:/var/lib/mysql
+        - "./init/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+        - "./init/data.sql:/docker-entrypoint-initdb.d/2.sql"
     environment:
       - MARIADB_DATABASE=bumblebee
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root
       - MARIADB_USER=test
       - MARIADB_PASSWORD=test
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: on-failure
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    depends_on:
+      - mariadb
+
 

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   id int(11) NOT NULL AUTO_INCREMENT,
   name varchar(255) NOT NULL,
@@ -6,6 +7,8 @@ CREATE TABLE `user` (
   status tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS `flower`;
 
 CREATE TABLE `flower` (
     id int(11) NOT NULL AUTO_INCREMENT,
@@ -19,6 +22,8 @@ CREATE TABLE `flower` (
     PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS `user_flower`;
+
 CREATE TABLE `user_flower` (
     user_id int(11) NOT NULL,
     flower_id int(11) NOT NULL,
@@ -28,12 +33,16 @@ CREATE TABLE `user_flower` (
     FOREIGN KEY (flower_id) REFERENCES flower(id)
 );
 
+DROP TABLE IF EXISTS `party`;
+
 CREATE TABLE `party`(
     id int(11) NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     status tinyint(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS `party_user`;
 
 CREATE TABLE `party_user` (
     user_id int(11) NOT NULL,
