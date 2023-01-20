@@ -40,7 +40,6 @@ CREATE TABLE `party_user` (
     party_id int(11) NOT NULL,
     nectar int(11) NOT NULL,
     pollen int(11) NOT NULL,
-    time datetime NOT NULL,
     PRIMARY KEY (user_id, party_id),
     FOREIGN KEY (user_id) REFERENCES user(id),
     FOREIGN KEY (party_id) REFERENCES party(id)
