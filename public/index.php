@@ -1,19 +1,21 @@
 <?php
 
 
+use App\Utility\ConnectionFactory;
+use App\Utility\ResponseManager;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-\App\Utility\ConnectionFactory::setConfig(__DIR__ . '/../conf/dbconf.ini');
+ConnectionFactory::setConfig(__DIR__ . '/../conf/dbconf.ini');
 
 $app = AppFactory::create();
 
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("<img src='https://media.tenor.com/tHLGe49Kf1EAAAAd/oh-blow-fish.gif' alt='aled'>");
+$app->get('/', function (Request $request, Response $response) {
+    $response->getBody()->write(ResponseManager::successResponse("API is running"));
     return $response;
 });
 
