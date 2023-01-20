@@ -12,16 +12,17 @@ class Flower
     {
         return "";
     }
-    public static function getFlowersByUser($id_user) : string
-    {
-        return "";
-    }
+
 
     public static function create(array $data) : string
     {
         return "";
     }
     public static function edit(array $data) : string
+    {
+        return "";
+    }
+    public static function delete(array $data) : string
     {
         return "";
     }

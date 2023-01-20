@@ -31,4 +31,32 @@ Supprime l'utilisateur avec l'id `:id`
 Supprime une fleur de l'utilisateur avec l'id `:id`
 ### DELETE /user/:id/party
 Supprime une partie de l'utilisateur avec l'id `:id`
+
+## Flower
+### GET /flower
+Retourne les informations de toutes les fleurs
+### GET /flower/:id
+Retourne les informations de la fleur avec l'id `:id`
+### POST /flower
+Créer une fleur
+### PATCH /flower/:id
+Modifie les informations de la fleur avec l'id `:id`
+### DELETE /flower/:id
+Supprime la fleur avec l'id `:id`
+
+## Party
+### GET /party
+Retourne les informations de toutes les parties
+### GET /party/:id
+Retourne les informations de la partie avec l'id `:id`
+### GET /party/:id/user
+Retourne les informations des utilisateurs de la partie avec l'id `:id`
+### POST /party
+Créer une partie
+### PATCH /party/:id
+Modifie les informations de la partie avec l'id `:id`
+### DELETE /party/:id
+Supprime la partie avec l'id `:id`
+
+
   

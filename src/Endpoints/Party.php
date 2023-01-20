@@ -8,10 +8,6 @@ class Party
     {
         return "";
     }
-    public static function getByPartiesByUser(int $id_user) : string
-    {
-        return "";
-    }
     public static function getUsersByParty(int $id) : string
     {
         return "";

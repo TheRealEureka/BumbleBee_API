@@ -18,7 +18,8 @@ class User
         return "";
     }
 
-    public static function getUsersByFlower(int $id_flower) : string
+
+    public static function getFlowersByUser($id) : string
     {
         return "";
     }
