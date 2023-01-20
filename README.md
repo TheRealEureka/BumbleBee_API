@@ -11,8 +11,6 @@ Retourne les informations de tout les utilisateurs
 Retourne les informations de l'utilisateur avec l'id `:id`
 ### GET /user/:id/party
 Retourne les informations des parties de l'utilisateur avec l'id `:id`
-### GET /user/:id/flower
-Retourne les informations des fleurs de l'utilisateur avec l'id `:id`
 ### POST /user
 Créer un utilisateur
 ### POST /user/:id/flower
@@ -51,6 +49,14 @@ Retourne les informations de toutes les parties
 Retourne les informations de la partie avec l'id `:id`
 ### GET /party/:id/user
 Retourne les informations des utilisateurs de la partie avec l'id `:id`
+### GET /party/:id/nectar
+Retourne le nectar de la partie avec l'id `:id`
+### GET /party/:id/pollen
+Retourne le pollen de la partie avec l'id `:id`
+### GET /party/:id/nectar/user/:userid
+Retourne le nectar de l'utilisateur `userid` de la partie avec l'id `:id`
+### GET /party/:id/pollen/user/:userid
+Retourne le pollen de l'utilisateur `userid` de la partie avec l'id `:id`
 ### POST /party
 Créer une partie
 ### PATCH /party/:id
