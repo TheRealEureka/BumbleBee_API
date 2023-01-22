@@ -12,7 +12,7 @@ class ResponseManager
     {
         return json_encode(array("success" => $success));
     }
-    public static function dataResponse(mixed $data) : string
+    public static function dataResponse(array $data) : string
     {
         return json_encode(array("response" => $data));
     }

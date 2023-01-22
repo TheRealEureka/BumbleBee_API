@@ -16,9 +16,10 @@ CREATE TABLE `flower` (
     description text NOT NULL,
     code varchar(255) NOT NULL,
     image_path varchar(255) NOT NULL,
-    point_values int(11) NOT NULL,
-    x int(11) NOT NULL,
-    y int(11) NOT NULL,
+    pollen int(11) NOT NULL,
+    nectar int(11) NOT NULL,
+    x decimal(11) NOT NULL,
+    y decimal(11) NOT NULL,
     PRIMARY KEY (id)
 );
 

@@ -2,17 +2,34 @@
 
 namespace App\Endpoints;
 
+use App\Utility\ConnectionFactory;
+use App\Utility\ResponseManager;
+
 class Flower
 {
-    public static function getById(int $id) : string
+    public static function getById($id) : string
     {
-        return "";
-    }
-    public static function getAllFlowers() : string
-    {
-        return "";
-    }
+        $res = [];
 
+        $db = ConnectionFactory::makeConnection();
+        $st = $db->prepare("SELECT * FROM flower WHERE id = :id");
+        $st->execute(array('id' => $id));
+        if($st->rowCount() > 0){
+            $res = $st->fetchAll();
+        }
+        return ResponseManager::dataResponse($res);
+    }
+    public static function getAll() : string
+    {
+        $res = [];
+
+        $db = ConnectionFactory::makeConnection();
+        $st = $db->query("SELECT *  FROM flower ");
+        if($st->rowCount() > 0){
+            $res = $st->fetchAll();
+        }
+        return  ResponseManager::dataResponse($res);
+    }
 
     public static function create(array $data) : string
     {
