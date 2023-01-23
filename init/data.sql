@@ -1,3 +1,4 @@
+use `bumblebee`;
 DELETE from user;
 INSERT INTO `user` (id,name,email,password,status) VALUES (0,'admin','admin@localhost','admin',1),
                                                        (1,'user','user@localhost','user',1),
